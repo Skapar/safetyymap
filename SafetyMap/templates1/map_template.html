@@ -1,0 +1,533 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<title>Document</title>
+	<link href="{% static 'css/font-awesome.min.css'%}" rel="stylesheet" />
+	<link href="{% static 'css/style.css'%}" rel="stylesheet" />
+	<link href="{% static 'css/modal-style.css'%}" rel="stylesheet" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="{% static 'js/languageswitcher.js'%}"></script>
+	<script src="{% static 'js/burger.js'%}"></script>
+	<script>
+		const ruPageUrl = "{% url 'ru_page' %}";
+		const kzPageUrl = "{% url 'kz_page' %}";
+	</script>
+	<script src="{% static 'js/lang.js'%}"></script>
+</head>
+
+<body>
+	<div class="navbar"> 
+		<img src="{% static 'modal-img/logot.png' %}" alt="" class="logo" >
+		<!-- <div class="selected-language"> -->
+		<!-- <img id="selected-flag" class="russia flag" src="img/modal-img/russia-flag.png" alt="">
+			<div class="pseudo">
+				<div class="icon">
+					<img class="navdown" src="img/modal-img/navsymbol.png" alt="">
+				</div>
+			</div>
+			<div id="lang-dropdown" class="lang-switcher language-options">
+				Language options will be dynamically added here by JavaScript
+			</div>   -->
+		<!-- The overlay -->
+		<div class="overlay" id="myNav">
+			<!-- Button to close the overlay navigation --><a class="closebtn" href="javascript:void(0)" onclick="closeNav()">×</a>
+			<!-- Overlay content -->
+			<div class="overlay-content">
+				<!-- <h2>Floors</h2> -->
+				<button class="accordion">5 floor</button>
+				<div class="panel">
+					<div class="floor-details">
+						<div class="floor-details-container">
+							<!-- <div class="floor-number fifthj">5</div> -->
+							<div class="room">
+								<div class="circle one"></div>
+								<div class="room-name firstroom"> <!-- Add the class "firstroom" -->
+									<h5>DEPARTMENT OF<br/>ACCOUNTING, REPORTING<br/>AND FINANCE</h5>
+									<div class="room-locate tolebix">Tole bi, 5th floor</div>
+								</div>
+								<div class="room-number">523</div>
+							</div>
+							<div class="room">
+								<div class="circle two"></div>
+								<div class="room-name secondroom"> <!-- Add the class "secondroom" -->
+									<h5>CASH REGISTER</h5>
+									<div class="room-locate tolebix">Tole bi, 5th floor</div>
+								</div>
+								<div class="room-number">516</div>
+							</div>
+							<div class="room">
+								<div class="circle three"></div>
+								<div class="room-name thirdroom"> <!-- Add the class "thirdroom" -->
+									<h5>CONTRACTS AND<br/>PROCUREMENT DEPARTMENT</h5>
+									<div class="room-locate tolebix">Tole bi, 5th floor</div>
+								</div>
+								<div class="room-number">504</div>
+							</div>
+							<div class="room">
+								<div class="circle four"></div>
+								<div class="room-name fourthroom"> <!-- Add the class "fourthroom" -->
+									<h5>OFFICE</h5>
+									<div class="room-locate tolebix">Tole bi, 5th floor</div>
+								</div>
+								<div class="room-number">511</div>
+							</div>
+							<div class="room">
+								<div class="circle five"></div>
+								<div class="room-name fifthroom"> <!-- Add the class "fifthroom" -->
+									<h5>PERSONNEL DEVELOPMENT<br/>DEPARTMENT</h5>
+									<div class="room-locate tolebix">Tole bi, 5th floor</div>
+								</div>
+								<div class="room-number">506, 508</div>
+							</div>
+							<div class="room">
+								<div class="circle six"></div>
+								<div class="room-name sixthroom"> <!-- Add the class "sixthroom" -->
+									<h5>LEGAL DEPARTMENT</h5>
+									<div class="room-locate tolebix">Tole bi, 5th floor</div>
+								</div>
+								<div class="room-number">503, 517</div>
+							</div>
+							<div class="room">
+								<div class="circle seven"></div>
+								<div class="room-name seventhroom"> <!-- Add the class "seventhroom" -->
+									<h5>FINANCIAL DIRECTOR</h5>
+									<div class="room-locate tolebix">Tole bi, 5th floor</div>
+								</div>
+								<div class="room-number">523</div>
+							</div>
+							<!-- Continue with additional rooms as needed -->
+						</div>
+					</div>
+				</div>
+				<button class="accordion">Раздел 4</button>
+				<div class="panel">
+					<div class="floor-details">
+						<div class="floor-details-container">
+							<div class="floor fourthff">
+								<!-- <div class="floor-number fourth">4</div> -->
+								<div class="floor-details">
+									<div class="room">
+										<div class="circle one"></div>
+										<div class="room-name firstroom_fourthfloor">
+											<h5 class="room-title">INTERNATIONAL SCHOOL<br/>OF ECONOMICS</h5>
+											<div class="room-locate panfilovfour">Panfilov, 4th floor</div>
+										</div>
+										<div class="room-number">402, 403</div>
+									</div>
+									<div class="room">
+										<div class="circle two"></div>
+										<div class="room-name secondroom_fourthfloor">
+											<h5 class="room-title">DEPARTAMENT OF<br/>INTERNATIONALIZATION</h5>
+											<div class="room-locate kazybekfour">Kazybek bi, 4th floor</div>
+										</div>
+										<div class="room-number">426, 427,<br/>432, 433</div>
+									</div>
+									<div class="room">
+										<div class="circle three"></div>
+										<div class="room-name thirdroom_fourthfloor">
+											<h5 class="room-title">BUSINESS SCHOOL</h5>
+											<div class="room-locate abfour">Abylai Khan, 4th floor</div>
+										</div>
+										<div class="room-number">457, 458,<br/>447</div>
+									</div>
+									<div class="room">
+										<div class="circle four"></div>
+										<div class="room-name fourthroom_fourthfloor">
+											<h5 class="room-title">VICE-RECTOR FOR<br/>INFRASTRUCTURE</h5>
+											<div class="room-locate abfour">Abylai Khan, 4th floor</div>
+										</div>
+										<div class="room-number">462</div>
+									</div>
+									<div class="room">
+										<div class="circle five"></div>
+										<div class="room-name fifthroom_fourthfloor">
+											<h5 class="room-title">VICE-RECTOR FOR SCIENCE<br/>AND INNOVATION</h5>
+											<div class="room-locate panfilovfour">Panfilov, 4th floor</div>
+										</div>
+										<div class="room-number">415</div>
+									</div>
+									<div class="room">
+										<div class="circle six"></div>
+										<div class="room-name sixthroom_fourthfloor">
+											<h5 class="room-title">VICE-RECTOR FOR<br/>ACADEMIC AFFAIRS</h5>
+											<div class="room-locate tolebifour">Tole bi, 4th floor</div>
+										</div>
+										<div class="room-number">473</div>
+									</div>
+									<div class="room">
+										<div class="circle seven"></div>
+										<div class="room-name seventhroom_fourthfloor">
+											<h5 class="room-title">VICE-RECTOR FOR SOCIAL<br/>AND EDUCATIONAL AFFAIRS</h5>
+											<div class="room-locate tolebifour">Tole bi, 4th floor</div>
+										</div>
+										<div class="room-number">472</div>
+									</div>
+									<div class="room">
+										<div class="circle eight"></div>
+										<div class="room-name eighthroom_fourthfloor">
+											<h5 class="room-title">RECTOR</h5>
+											<div class="room-locate tolebifour">Tole bi, 4th floor</div>
+										</div>
+										<div class="room-number">466</div>
+									</div>
+									<div class="room">
+										<div class="circle nine"></div>
+										<div class="room-name ninthroom_fourthfloor">
+											<h5 class="room-title">AL-FARABI HALL</h5>
+											<div class="room-locate tolebifour">Tole bi, 4th floor</div>
+										</div>
+										<div class="room-number">470</div>
+									</div>
+									<!-- Add more room divs as per your requirement -->
+								</div>
+							</div>
+						</div>
+					</div>					
+				</div>
+				<button class="accordion">Раздел 3</button>
+				<div class="panel">
+					<div class="floor-details">
+						<div class="floor-details-container">
+							<div class="floor thirdff">
+								<!-- <div class="floor-number">3</div> -->
+								<div class="floor-details">
+									<div class="room">
+										<div class="circle one"></div>
+										<div class="room-name first_thirdfloor">
+											<h5>SCHOOL OF ENERGY AND<br/>OIL AND GAS INDUSTRY</h5>
+											<div class="room-locate tolebithree">Tole bi, 3rd floor</div>
+										</div>
+										<div class="room-number">353, 354,
+											<br/>356</div>
+									</div>
+									<div class="room">
+										<div class="circle two"></div>
+										<div class="room-name second_thirdfloor">
+											<h5>SCHOOL OF GEOLOGY</h5>
+											<div class="room-locate tolebipanfilovthree">Tole bi, 3rd floor<span> Panfilov, 3rd floor</span></div>
+										</div>
+										<div class="room-number">351, 332A</div>
+									</div>
+									<div class="room">
+										<div class="circle three"></div>
+										<div class="room-name third_thirdfloor">
+											<h5>SCHOOL OF NATURAL AND<br/>SOCIAL SCIENCES</h5>
+											<div class="room-locate panfilovthree">Panfilov, 3rd floor</div>
+										</div>
+										<div class="room-number">332, 333</div>
+									</div>
+									<div class="room">
+										<div class="circle four"></div>
+										<div class="room-name fourth_thirdfloor">
+											<h5>SCHOOL OF APPLIED<br/>MATHEMATICS</h5>
+											<div class="room-locate panfilovthree">Panfilov, 3rd floor</div>
+										</div>
+										<div class="room-number">318</div>
+									</div>
+									<div class="room">
+										<div class="circle five"></div>
+										<div class="room-name fifth_thirdfloor">
+											<h5>MEDICAL SERVICE</h5>
+											<div class="room-locate tolebithree">Tole bi, 3rd floor</div>
+										</div>
+										<div class="room-number">348A, 348B</div>
+									</div>
+									<!-- Add more room divs as per your requirement -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button class="accordion">Раздел 2</button>
+				<div class="panel">
+					<div class="floor-details">
+						<div class="floor-details-container">
+							<!-- <div class="floor-number secondfl">2</div> -->
+							<div class="floor-details secondcommon">
+								<div class="room">
+									<div class="circle one"></div>
+									<div class="room-name first_secondfloor">
+										<h5>INDEPENDENCE HALL</h5>
+										<div class="room-locate tolebitwo">Tole bi, 2nd floor</div>
+									</div>
+									<div class="room-number numberofsecond">250b</div>
+								</div>
+								<div class="room">
+									<div class="circle two"></div>
+									<div class="room-name second_secondfloor">
+										<h5>REGISTRAR'S OFFICE</h5>
+										<div class="room-locate panfilovtwo">Panfilov, 2nd floor</div>
+									</div>
+									<div class="room-number numberofsecond">239</div>
+								</div>
+								<div class="room">
+									<div class="circle three"></div>
+									<div class="room-name third_secondfloor">
+										<h5>DEPARTMENT OF<br/>CONTINUING EDUCATION</h5>
+										<div class="room-locate abtwo">Abylai Khan, 2nd floor</div>
+									</div>
+									<div class="room-number numberofsecond">243</div>
+								</div>
+								<div class="room">
+									<div class="circle four"></div>
+									<div class="room-name fourth_secondfloor">
+										<h5>KAZAKHSTAN MARINE ACADEMY</h5>
+										<div class="room-locate abtwo">Abylai Khan, 2nd floor</div>
+									</div>
+									<div class="room-number numberofsecond">255</div>
+								</div>
+								<div class="room">
+									<div class="circle five"></div>
+									<div class="room-name fifth_secondfloor">
+										<h5>SCHOOL OF INFORMATION<br/>TECHNOLOGY AND <br/>ENGINEERING</h5>
+										<div class="room-locate abtwo">Abylai Khan, 2nd floor</div>
+									</div>
+									<div class="room-number numberofsecond">261 to 265</div>
+								</div>
+								<div class="room">
+									<div class="circle six"></div>
+									<div class="room-name sixth_secondfloor">
+										<h5>MANAGER FOR ACS<br/>SYSTEM AND ISSUANCE<br/>OF ID CARDS</h5>
+										<div class="room-locate tolebitwo">Tole bi, 2nd floor</div>
+									</div>
+									<div class="room-number numberofsecond">250A</div>
+								</div>
+								<div class="room">
+									<div class="circle seven"></div>
+									<div class="room-name seventh_secondfloor">
+										<h5>COWORKING №2</h5>
+										<div class="room-locate kazybektwo">Kazybek bi, 2nd floor</div>
+									</div>
+									<div class="room-number numberofsecond">777</div>
+								</div>
+								<div class="room">
+									<div class="circle eight"></div>
+									<div class="room-name eighthth_secondfloor">
+										<h5>ABAY PRESS CENTER</h5>
+										<div class="room-locate kazybektwo">Kazybek bi, 2nd floor</div>
+									</div>
+									<div class="room-number numberofsecond">726</div>
+								</div>
+								<div class="room">
+									<div class="circle nine"></div>
+									<div class="room-name nineth_secondfloor">
+										<h5>DEPARTMENT OF STUDENT<br/>AFFAIRS</h5>
+										<div class="room-locate kazybektwo">Kazybek bi, 2nd floor</div>
+									</div>
+									<div class="room-number numberofsecond">729</div>
+								</div>
+								<!-- Add more room divs as per your requirement -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<button class="accordion">Раздел 1</button>
+				<div class="panel">
+					<div class="floor-details">
+						<div class="floor-details-container">
+							<div class="floor oneff">
+								<!-- <div class="floor-number">1</div> -->
+								<div class="floor-details">
+									<div class="room">
+										<div class="circle one"></div>
+										<div class="room-name">
+											<h5>CAREER AND ALUMNI<br/>CENTER</h5>
+											<div class="room-locate tolebione">Tole bi, 1st floor</div>
+										</div>
+										<div class="room-number">152</div>
+									</div>
+									<div class="room">
+										<div class="circle two"></div>
+										<div class="room-name">
+											<h5>PSYCHOLOGIST'S OFFICE</h5>
+											<div class="room-locate tolebione">Tole bi, 1st floor</div>
+										</div>
+										<div class="room-number">149</div>
+									</div>
+									<div class="room">
+										<div class="circle three"></div>
+										<div class="room-name">
+											<h5>DEPARTMENT OF MARKETING<br/>AND RECRUITING</h5>
+											<div class="room-locate tolebione">Tole bi, 1nd floor</div>
+										</div>
+										<div class="room-number">147</div>
+									</div>
+									<div class="room">
+										<div class="circle four"></div>
+										<div class="room-name">
+											<h5>ADMISSION COMMITTEE</h5>
+											<div class="room-locate tolebione">Tole bi, 1st floor</div>
+										</div>
+										<div class="room-number">153</div>
+									</div>
+									<div class="room">
+										<div class="circle five"></div>
+										<div class="room-name">
+											<h5>OCCUPATIONAL HEALTH<br/>AND SAFETY ENGINEER</h5>
+											<div class="room-locate tolebione">Tole bi, 1st floor</div>
+										</div>
+										<div class="room-number">154</div>
+									</div>
+									<div class="room">
+										<div class="circle six"></div>
+										<div class="room-name">
+											<h5>BUSINESS DEVELOPMENT <br/>SERVICE</h5>
+											<div class="room-locate tolebione">Panfilov, 1st floor</div>
+										</div>
+										<div class="room-number">142</div>
+									</div>
+									<div class="room">
+										<div class="circle seven"></div>
+										<div class="room-name">
+											<h5>SCIENCE LIBRARY</h5>
+											<div class="room-locate abone">Abylai Khan, 1st floor</div>
+										</div>
+										<div class="room-number">164, 157
+											<br/>161</div>
+									</div>
+									<div class="room">
+										<div class="circle eight"></div>
+										<div class="room-name">
+											<h5>DEPARTMENT OF<br/>INFORMATION <br/>TECHNOLOGIES</h5>
+											<div class="room-locate abone">Abylai Khan, 1st floor</div>
+										</div>
+										<div class="room-number">175</div>
+									</div>
+									<div class="room">
+										<div class="circle ten"></div>
+										<div class="room-name">
+											<h5>SCHOOL OF MATERIALS<br/>SCIENCE AND GREEN</h5>
+											<div class="room-locate panfilovone">Panfilov, 1st floor <span>Panfilov, 2nd floor</span></div>
+										</div>
+										<div class="room-number">105, 120,
+											<br/>221</div>
+									</div>
+									<div class="room">
+										<div class="circle nine"></div>
+										<div class="room-name">
+											<h5>COWORKING №1 HALYK<br/>ACADEMY</h5>
+											<div class="room-locate kazybekone">Kazybek bi, 1st floor</div>
+										</div>
+										<div class="room-number"><img class="halyk" height="30px" width="30px" alt="" src="{% static 'img/icons/cowork.png' %}" /></div>
+									</div>
+									<!-- Add more room divs as per your requirement -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button class="accordion">Раздел 0</button>
+				<div class="panel">
+					<div class="floor-details">
+						<div class="floor-details-container">
+							<!-- <div class="floor-number">0</div> -->
+							<div class="floor-details">
+								<div class="room">
+									<div class="circle one"></div>
+									<div class="room-name">
+										<h5 class="security">SECURITY</h5>
+										<div class="room-locate tolebizero">Tole bi, 0th floor</div>
+									</div>
+									<div class="room-number">95</div>
+								</div>
+								<div class="room">
+									<div class="circle two"></div>
+									<div class="room-name">
+										<h5>CANTEEN</h5>
+										<div class="room-locate tolebizero">Tole bi, 0th floor</div>
+									</div>
+									<div class="room-number"><img class="canteen1" height="30px" width="30px" alt="" src="{% static 'img/icons/settings.png' %}" /></div>
+								</div>
+								<div class="room">
+									<div class="circle three"></div>
+									<div class="room-name">
+										<h5>CO-WORKING</h5>
+										<div class="room-locate tolebizero">Tole bi, 0th floor</div>
+									</div>
+									<div class="room-number"><img alt="" height="30px" width="30px" src="{% static 'img/icons/cowork.png' %}" /></div>
+								</div>
+								<div class="room">
+									<div class="circle four"></div>
+									<div class="room-name">
+										<h5>BUFFET</h5>
+										<div class="room-locate tolebizero">Tole bi, 0th floor</div>
+									</div>
+									<div class="room-number"><img alt="" height="30px" width="30px" src="{% static 'img/icons/settings.png' %}" /></div>
+								</div>
+								<div class="room">
+									<div class="circle five"></div>
+									<div class="room-name">
+										<h5>GAME LAB</h5>
+										<div class="room-locate tolebizero">Tole bi, 0th floor</div>
+									</div>
+									<div class="room-number">47</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<script src="{% static 'js/accordion.js'%}"></script>
+			</div>
+		</div>
+		<!-- Use any element to open/show the overlay navigation menu -->
+		<a class="box-shadow-menu" onclick="openNav()"> <img alt="" class="muimg" src="{% static 'img/icons/square.png' %}" /> </a>
+	</div>
+	<div class="container-fl">
+		<div class="floor-img">
+			<div class="allmarkups">
+				<div class="markup"> <img alt="" src="{% static 'img/icons/markups.png' %}" /> </div>
+			</div>
+			<div class="floor-image-container"> 
+				<img alt="" class="imgfive" src="{% static 'img/icons/fivefloor.png' %}" /> 
+				<img alt="" class="" src="{% static 'img/icons/fourfloor.png' %}" />
+				<img alt="" class="" src="{% static 'img/icons/threefloor.png' %}" /> 
+				<img alt="" class="" src="{% static 'img/icons/twofloor.png' %}" /> 
+				<img alt="" class="" src="{% static 'img/icons/onefloor.png' %}" />
+				<div class="zerothfloor">
+					<div class="tolebi_zero">T</div>
+					<div class="panfilova_zero modalBtn">Pp</div>
+					<img alt="" class="" src="{% static 'img/floors/zero.png' %}" />
+				</div>
+			</div>  
+		</div>
+
+		</div>
+		</div>
+		<!-- <button class="modalBtn kab4"><img alt="" src="{% static 'img/Pointer.png' %}" /></button> -->
+		<div class="modal" id="myModal" data-url="{{ modal_image_url }}">
+			<div class="modal-content"> <span class="close">×</span>
+				<div id="modalBody"></div>
+			</div>
+			<script src="{% static 'js/index.js' %}" defer></script>
+		</div>
+
+
+		<!-- </div> -->
+		<footer>
+			<div class="container"> 
+				<h6>Find &amp; follow us</h6>
+				<ul class="icon-social">
+					<li class="linkedin"><a href="https://www.linkedin.com/company/almavalley"><i class="fa fa-linkedin"></i></a></li>
+					<li class="twitter"><a href="https://wa.me/77076673710"><i class="fa fa-whatsapp"></i></a></li>
+					<li class="google"><a href="almavalleyhub@gmail.com"><i class="fa fa-google"></i></a></li>
+					<li class="instagram"><a href="https://instagram.com/almavalley.kz?igshid=OGQ5ZDc2ODk2ZA=="><i class="fa fa-instagram"></i></a></li>
+				</ul>
+				<div class="tel-fax-mail">
+					<ul>
+						<li><span>Email:</span> almavalleyhub@gmail.com</li>
+					</ul>
+				</div>
+				<div class="ft-bottom"> <span>Copyright © 2023 All Rights Reserved by Almavalley </span> </div>
+			</div>
+		</footer>
+		<script src="{% static 'js/jquery.min.js' %}"></script>
+		<script src="{% static 'js/materialize.min.js' %}"></script>
+		<script src="{% static 'js/slick.min.js' %}"></script>
+		<script src="{% static 'js/custom.js' %}"></script>
+	</div>
+</body>
+</html>

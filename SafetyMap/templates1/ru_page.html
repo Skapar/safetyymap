@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<link href="{% static 'main-flag/css/redirected-page.css'%}" rel="stylesheet" />
+	<title>Language Page</title>
+
+	<script>
+		const ruPageUrl = "{% url 'ru_page' %}";
+		const kzPageUrl = "{% url 'kz_page' %}";
+	</script>
+</head>
+
+<body>
+	<div class="page-container">
+		<!-- Header -->
+		<header>
+			<h1>Язык:<span id="languageName">Ru</span></h1> <a class="return-link" href="{% url 'mainn' %}">Return to Language Selector</a> </header>
+		<!-- Main Content -->
+		<main>
+			<section class="content-section">
+				<h2>Добро Пожаловать!</h2>
+				<p>Описание</p>
+			</section>
+		</main>
+		<!-- Navigation Tabs -->
+		<nav> 
+			<a class="taplink active" href="https://www.apple.com/ru/">Link 1</a> 
+			<a class="taplink" href="{% url 'mapi' %}">Link 2</a> 
+			<a class="taplink" href="https://www.apple.com/ru/">Link 3</a> 
+		</nav>
+	</div>
+	<script src="{% static 'main-flag/js/langflag.js'%}"></script>
+</body>
+
+</html>

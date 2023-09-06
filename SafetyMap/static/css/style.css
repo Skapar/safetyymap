@@ -1,0 +1,703 @@
+@import url('https://www.dafontfree.net/embed/bWVsb2Rib2xkLWJvbGQmZGF0YS8zOC9tLzExNjg3MC9tZWxvZGJvXy50dGY');
+
+body{
+    font-family: 'melodbold', sans-serif;
+    text-align: center;
+    /* background-color: #f0f0f0; */
+    /* min-height: 200vh; */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
+    color: #343434;
+    font-family: 'Lato', sans-serif;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 34px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+h4 {
+    font-size: 28px;
+}
+
+h5 {
+    font-size: 18px;
+    color: #000;
+}
+
+h6 {
+    font-size: 16px;
+	
+}
+
+p {
+    margin: 8px 0;
+}
+/*  */
+/* Style for the modal overlay */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top of everything */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f1f1f1;
+    overflow-x: hidden;
+  }
+  
+  /* Style for the modal content */
+  .modal-content {
+    background-color: white;
+    border: 1px solid #888;
+    max-width: 100%;
+    height: 100%;
+    position: relative;
+    margin-top: 40px;
+  }
+  
+  /* Style for the close button */
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  @media only screen and (min-width = 766px){
+    .close{
+        right: 150px;
+    }
+  }
+  
+  /* Add a little animation when opening the modal */
+  .modal-content {
+    animation: modal-open 0.3s ease;
+  }
+  
+  @keyframes modal-open {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+/*  */
+/* NAVBAR */
+.navbar{
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 38px;
+    padding: 15px 0px;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    border-bottom: 2px solid #222;
+    background: #222;
+}
+.logo{
+    /* position:absolute; */
+    width: 138px;
+    height: 33.83px;
+    
+    position: absolute;
+    left: 6%;
+    top: 25%;
+    /* transform: translate(-30%, -10%); Сместить изображение на половину его собственной ширины и высоты влево и вверх */
+    
+
+    flex-shrink: 0;
+}
+/* box shadow start */
+.box-shadow-menu {
+    position: relative;
+    top: 0% !important;
+    display: inline-block;
+    padding: 10px;
+}
+.box-shadow-menu img{
+    width: 45%;
+    height: auto;
+}
+
+  .box-shadow-menu:before {
+    content: "";
+    width: 1.5em;
+    height: 0.15em;
+    
+  }
+
+
+/* box shadow end*/
+
+
+/* overlay start */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 100%;
+    width: 100%;
+    position: fixed; /* Stay in place */
+    z-index: 9; /* Sit on top */
+    right: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  
+  /* Position the content inside the overlay */
+  .overlay-content {
+    position: relative;
+    top: 10%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  }
+  
+  /* The navigation links inside the overlay */
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  /* Position the close button (top right corner) */
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  .openburger{
+    background: transparent;
+    max-width: 3%;
+    display: flex;
+    position: fixed;
+    
+    right: 20%;
+    cursor: pointer;
+
+
+    /* border: 4px solid rgb(255, 255, 255); */
+    border-radius: 5%;
+  }
+  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+  @media screen and (max-height: 450px) {
+    .overlay a {
+        font-size: 20px}
+    .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
+    
+/*  */
+
+/*  */
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+  }
+  
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+  
+  .accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "\2212";
+  }
+  
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+/*  */
+/* navbar end  */
+
+
+.container {
+    flex: 1 0 auto;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.allmarkups {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 90%;
+    left: 20%;
+    margin-top: 100px;
+}
+
+.markup img{
+    max-width: 25%;
+    height: auto;
+}
+/* floor img */
+.floor-img{
+    width: 100%;
+    height: auto;
+}
+.floor-image-container{
+    margin-top: 20px;
+    max-width: 100%;
+    height: auto;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.zerothfloor{
+    width: 100%;
+    height: auto;
+}
+.panfilova_zero{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    border: 15px solid black;
+    left: 300px;
+    margin-top: 180px;
+}
+.tolebi_zero{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    left: 300px;
+    margin-top: 370px;
+}
+
+@media only screen and (max-width: 374px) {
+
+}
+  @media only screen and (min-width: 374px) and (max-width: 424px) {
+    
+}
+@media only screen and (min-width: 425px) and (max-width: 576px) {
+    
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+}
+@media only screen and (min-width: 1200px) {
+    
+}
+@media only screen and (min-width: 1400px) {
+    .panfilova_zero{
+        width: 80px;
+        height: 90px;
+        border: 10px solid black;
+        position: absolute;
+        left: 430px;
+        margin-top: 200px;
+        /* padding: 10px; */
+    }
+    .tolebi_zero{
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        left: 430px;
+        margin-top: 570px;
+    }
+}
+@media only screen and (min-width: 2500px) {
+    
+}
+.floor-image-container img{
+	width: 100%;
+	height: auto;
+    margin-bottom: 30px;
+}
+.floor-image-container .imgfive{
+    position: relative;
+    max-width: 40%;
+    left: -10%;
+}
+
+/* floor - details start */
+.floor-details-container {
+    position: relative;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.rooms-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;  /* This is for spacing between the rooms, you can adjust as needed */
+}
+
+.room {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.room-name{
+    text-align: left;
+}
+
+.floor-number{
+    font-size: 40px;
+}
+.room-number{
+    position: relative;
+    left: 40%;
+    text-align: left;
+
+    font-size: 18px;
+    font-weight: 600;
+}
+.room-locate{
+    font-size: smaller;
+    color: rgb(224, 178, 178)
+}
+
+.circle {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+    background-color: #555;
+    border-radius: 50%;
+}
+.one{
+    background: #e5514f;
+}
+.two{
+    background: #e2793f;
+}
+.three{
+    background: #ea9b3f;
+}
+.four{
+    background: #f2c864;
+}
+.five{
+    background: #99bd77;
+}
+.six{
+    background: #61a78b;
+}
+.seven{
+    background: #5f8f8f;
+}
+.eight{
+    background: #5e748c;
+}
+.nine{
+    background: #417c9c;
+}
+.ten{
+    background: #000;
+}
+
+/* end of description */
+
+/* buttons */
+
+.modalBtn{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+  
+
+/* buttons end */
+
+/* footer */
+footer {
+	background: #191919;
+	text-align: center;
+	padding: 40px 0;
+	display: block;
+	width: 100%;
+    margin-top: 20px;
+    flex-shrink: 0;  
+}
+
+footer h6 {
+	color: #ddd;
+	font-size: 20px;
+}
+
+footer .icon-social {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	margin-top: 20px;
+	margin-bottom: 15px;
+}
+
+footer .icon-social li {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	margin: 0 3px;
+	border-radius: 100%;
+}
+
+footer .icon-social .linkedin {
+	background: #3b5998;
+}
+
+footer .icon-social .twitter {
+	background: linear-gradient(#5FFC7B, #28D146);
+}
+
+footer .icon-social .google {
+	background: #dd4b39;
+}
+
+footer .icon-social .instagram {
+	background: linear-gradient(165deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80) ;
+}
+
+footer .icon-social .rss {
+	background: #fe7e00;
+
+}
+
+footer ul li a {
+	color: #fff;
+}
+
+footer .tel-fax-mail ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	color: #bbb;
+}
+
+footer .tel-fax-mail ul li {
+	padding: 4px 0;
+}
+
+footer .tel-fax-mail ul li span {
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+}
+
+footer .ft-bottom {
+	border-top: 1px solid #222;
+	margin-top: 20px;
+	padding-top: 20px;
+	color: #999;
+}
+
+@media only screen and (max-width: 374px) {
+    .box-shadow-menu {
+        position: relative;
+        left: 68%;
+        padding: 10px;
+
+    }
+}
+  @media only screen and (min-width: 374px) and (max-width: 424px) {
+    .box-shadow-menu {
+        position: relative;
+        left: 72%;
+        padding: 10px;
+    }
+}
+@media only screen and (min-width: 425px) and (max-width: 576px) {
+    .box-shadow-menu {
+        position: relative;
+        left: 72%;
+        padding: 10px;
+    }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .box-shadow-menu {
+        /* Styles for portrait tablets here */
+        position: relative;
+        left: 80%;
+        padding: 10px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .box-shadow-menu {
+        /* Styles for landscape tablets here */
+        position: relative;
+        left: 84%;
+        padding: 10px;
+    }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .box-shadow-menu {
+        /* Styles for small laptops here */
+        position: relative;
+        left: 84%;
+        padding: 10px;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .box-shadow-menu {
+        /* Styles for laptops & desktops here */
+        left: 88%;
+        padding: 10px;
+    }
+}
+@media only screen and (min-width: 1440px) {
+    .box-shadow-menu {
+        /* Styles for laptops & desktops here */
+        left: 86%;
+        padding: 10px;
+    }
+}
+@media only screen and (min-width: 2500px) {
+    .box-shadow-menu {
+        /* Styles for laptops & desktops here */
+        left: 88%;
+        padding: 10px;
+    }
+}
+/*   floor-details   */
+@media only screen and (max-width: 426px) {
+    .floor-details-container {
+        position: relative;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .rooms-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;  /* This is for spacing between the rooms, you can adjust as needed */
+    }
+    
+    .room {
+        display: flex;
+        /* align-items: flex-start; */
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    .room-name h5{
+        font-size: 13px;
+    }
+    
+    .floor-number{
+        font-size: 40px;
+    }
+    .room-number{
+        position: absolute;
+        left: 80%;
+        text-align: left;
+        justify-content: flex-start;
+    
+        font-size: 10px;
+        font-weight: 600;
+    }
+    .room-locate{
+        font-size: 10px;
+        color: rgb(224, 178, 178)
+    }
+    
+    .circle {
+        height: 20px;
+        width: 20px;
+        
+    }
+}
+@media only screen and (min-width: 768px)  {
+    .room {
+        display: flex;
+        /* align-items: flex-start; */
+        margin-bottom: 10px;
+    }
+    .circle {
+        height: 22px;
+        width: 22px;   
+    }
+    .room-name h5{
+        font-size: 15px;
+    }
+    .room-number{
+        position: absolute;
+        left: 80%;
+
+        font-size: 13px;
+        font-weight: 600;
+    }
+}
+
+/*      */
+

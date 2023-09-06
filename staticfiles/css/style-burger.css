@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+body, h1, h2, h3, h4, h5, h6, p, a {
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Popins', sans-serif;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    /* background: linear-gradient(135deg, #331c1c); */
+    line-height: 1.5;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
+    color: #343434;
+    font-family: 'Lato', sans-serif;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 34px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+h4 {
+    font-size: 28px;
+}
+
+h5 {
+    font-size: 18px;
+    color: #000;
+}
+
+h6 {
+    font-size: 16px;
+	
+}
+
+a {
+    color: #333;
+}
+
+p {
+    margin: 8px 0;
+}
+html, body {
+    height: 100%;  /* Ensures the full height of the viewport is used */
+}
+
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+/* floor - details start */
+.floor-details-container {
+    font-family: 'melodbold-bold, 'sans-serif;
+    font-weight: 900;
+    padding: 20px;
+}
+.thirdff{
+    
+}
+
+.floor-number{
+    /* position: relative; */
+    font-size: 40px;
+}
+.fourth{
+    position: relative;
+    top: 25px;
+}
+
+.floor-number{
+    position: relative;
+    display: flex;
+    left: -5%;
+}
+.room {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    /* margin-left: 5%; */
+}
+
+.fourth{
+    margin-top: 90px;
+}
+.room-name {
+    text-align: left;
+}
+.room-locate{
+    position: relative;
+    font-size: 10px;
+    color: #515151;
+}
+
+.room-number {
+    position: absolute;
+    display: flex;
+    text-align: left;
+    /* align-items: flex-end; */
+    /* justify-content: left; */
+    left: 70%;
+    margin-left: 5px;
+}
+.numberofsecond{
+    position: absolute;
+    left: 100%;
+}
+.circle {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+    background-color: #555;
+    border-radius: 50%;
+}
+.circle:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    transform: scale(1.1);
+}
+.one{
+    background: #e5514f;
+}
+.two{
+    background: #e2793f;
+}
+.three{
+    background: #ea9b3f;
+}
+.four{
+    background: #f2c864;
+}
+.five{
+    background: #99bd77;
+}
+.six{
+    background: #61a78b;
+}
+.seven{
+    background: #5f8f8f;
+}
+.eight{
+    background: #5e748c;
+}
+.nine{
+    background: #417c9c;
+}
+.ten{
+    background: #000;
+}
+
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    background-color: rgba(0, 56, 104, 0.95); /* Using a deep blue instead of pure black */   
+    height: 100%;
+    width: 100%;
+    position: fixed; /* Stay in place */
+    z-index: 9; /* Sit on top */
+    right: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  
+  /* Position the content inside the overlay */
+  .overlay-content {
+    position: relative;
+    top: 15%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  }
+  
+  /* The navigation links inside the overlay */
+  .overlay a {
+    color: #B0BEC5;
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: color 0.3s, transform 0.3s; /* Transition effects on hover (color) */
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+    transform: translateY(-3px);
+  }
+  
+  /* Position the close button (top right corner) */
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    color: #ECEFF1;
+  }
+  .openburger{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    cursor: pointer;
+    color: #000000;
+
+    border: 4px solid black;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .openburger:hover {
+    background: #7d7d7d;
+    transform: scale(1.05);
+}
+  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+  @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
+/*  */
+
+@media only screen and (min-width:1300px) and (max-width: 1400px) {
+        .secondfl{
+            position: relative;
+            top: 100px;
+            left: -60px;
+        }
+        .secondcommon{
+            position: relative;
+            top: 80px;
+        }
+}
+
+@media only screen and (max-width: 600px) { 
+    .secondfl{
+        position: relative;
+        top: 20px;
+    }
+    .oneff{
+        position: relative;
+        top: 90px;
+    }
+    .room{
+        margin-bottom: 10px;
+    }
+    .circle {
+        width: 2px;
+        height: auto;
+        margin-right: 6px;
+        padding: 9px;
+        border-radius: 50%;
+    }
+    .room-name h5{
+        font-size: 12px;
+    }
+    .room-locate{
+        font-size: 8px;
+    }
+    .floor-number {
+        font-size: 29px;
+        font-weight: 900;
+    }
+    .fourth{
+        margin-top: 0;
+    }
+    .thirdff{
+        margin-top: 0;
+    }
+    .room-number{
+        position: absolute;
+        display: flex;
+        text-align: left;
+        left: 100%;
+        font-size: 8px;
+        font-weight: 900;
+    }
+}
+/* ================ SMALL/MINI DEVICES =============== */
+/* Styles for screen widths less than 480px */
+@media only screen and (max-width: 480px) {
+    .overlay .closebtn {
+        font-size: 30px; /* smaller close button */
+        top: 10px;
+        right: 15px;
+    }
+    .overlay a {
+        font-size: 20px; /* smaller navigation links */
+    }
+    .openburger {
+        border: 2px solid black; /* thinner border */
+    }
+}

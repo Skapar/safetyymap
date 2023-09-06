@@ -1,0 +1,68 @@
+{% load static %}
+<div class="navbar">
+	<img class="logo" src="{% static 'modal-img/logot.png' %}" alt="">
+	<div class="selected-language">
+		<img id="selected-flag" class="russia flag" src="{% static 'modal-img/russia-flag.png' %}" alt="">
+		<div class="pseudo">
+			<div class="icon">
+				<!-- <img class="navdown" src="img/modal-img/navsymbol.png" alt=""> -->
+			</div>
+		</div>
+		<div id="lang-dropdown" class="lang-switcher language-options">
+			<!-- Language options will be dynamically added here by JavaScript -->
+		</div>  
+	</div>
+</div>
+<div class="video-single app-pages">
+	<div class="video-iframe">
+		<img src="" alt="">
+	</div>
+	<div class="container">
+		<div class="entry">
+			<h5 data-translate="theme">Основы пожарной безопасности</h5>
+			<div class="description" >
+				<h6 data-translate="descriptiontheme">Описание</h6>
+			</div>
+			<p data-translate="description">Основы пожарной безопасности это самая важная и нужная вещь...</p>
+			<div class="share">
+				<ul>
+					<li><h6 data-translate="share">Share via :</h6></li>
+					<li><a href=""><i class="fa fa-facebook-square"></i></a></li>
+					<li><a href=""><i class="fa fa-twitter-square"></i></a></li>
+					<li><a href=""><i class="fa fa-google-plus-square"></i></a></li>
+					<li><a href=""><i class="fa fa-instagram"></i></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end video single -->
+
+
+<footer>
+	<div class="container">
+		<h6>Find & follow us</h6>
+		<ul class="icon-social">
+			<li class="facebook"><a href="https://www.linkedin.com/company/almavalley"><i class="fa fa-linkedin"></i></a></li>
+			<li class="twitter"><a href="https://wa.me/77076673710"><i class="fa fa-whatsapp"></i></a></li>
+			<li class="google"><a href="almavalleyhub@gmail.com"><i class="fa fa-google"></i></a></li>
+			<li class="instagram"><a href="https://instagram.com/almavalley.kz?igshid=OGQ5ZDc2ODk2ZA=="><i class="fa fa-instagram"></i></a></li>
+		</ul>
+		<div class="tel-fax-mail">
+			<ul>
+				<li><span>Email:</span> almavalleyhub@gmail.com</li>
+			</ul>
+		</div>
+		<div class="ft-bottom">
+			<span>Copyright © 2023 All Rights Reserved by Almavalley </span>
+		</div>
+	</div>
+</footer>
+
+<script src="{% static 'js/jquery.min.js' %}" defer></script>
+<script src="{% static 'js/materialize.min.js' %}" defer></script>
+<script src="{% static 'js/slick.min.js' %}" defer></script>
+<script src="{% static 'js/custom.js' %}" defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
+<script src="{% static 'js/languageswitcher.js' %}" defer></script>
+
